@@ -1,0 +1,282 @@
+{
+  "formatVersion": "2.0.0",
+  "meta": {
+    "name": "gates",
+    "projectId": "bT4haY8FQEF6rDRmZPSc"
+  },
+  "scopes": [
+    {
+      "id": "26906968121",
+      "name": "Main",
+      "topology": {
+        "components": [
+          {
+            "cid": "c_bffd9457cede",
+            "type": "AndGate",
+            "ports": {
+              "inp": [
+                "n_13235bf639df",
+                "n_7f3afb0c737a"
+              ],
+              "output1": "n_60119623a69e"
+            },
+            "parameters": {
+              "bitWidth": 1,
+              "direction": "RIGHT",
+              "inputSize": 2
+            }
+          },
+          {
+            "cid": "c_1b160d0d98da",
+            "type": "Input",
+            "ports": {
+              "output1": "n_13235bf639df"
+            },
+            "parameters": {
+              "bitWidth": 1,
+              "constructorParameters": [
+                {
+                  "x": 0,
+                  "y": 20,
+                  "id": "fvMcYrvX21zxOksYzonj"
+                }
+              ],
+              "direction": "RIGHT",
+              "state": 0
+            }
+          },
+          {
+            "cid": "c_fe72e8dd4b42",
+            "type": "Input",
+            "ports": {
+              "output1": "n_7f3afb0c737a"
+            },
+            "parameters": {
+              "bitWidth": 1,
+              "constructorParameters": [
+                {
+                  "x": 0,
+                  "y": 40,
+                  "id": "musJEUTjEBBsJCBhLOiL"
+                }
+              ],
+              "direction": "RIGHT",
+              "state": 0
+            }
+          },
+          {
+            "cid": "c_ca1af9ae6663",
+            "type": "OrGate",
+            "ports": {
+              "inp": [
+                "n_13235bf639df",
+                "n_7f3afb0c737a"
+              ],
+              "output1": "n_23bc0fb76272"
+            },
+            "parameters": {
+              "bitWidth": 1,
+              "direction": "RIGHT",
+              "inputSize": 2
+            }
+          },
+          {
+            "cid": "c_33274127fccb",
+            "type": "Output",
+            "ports": {
+              "inp1": "n_60119623a69e"
+            },
+            "parameters": {
+              "bitWidth": 1,
+              "constructorParameters": [
+                {
+                  "x": 100,
+                  "y": 20,
+                  "id": "QQzZnM6APvRenEulw580"
+                }
+              ],
+              "direction": "LEFT"
+            }
+          },
+          {
+            "cid": "c_747b85817669",
+            "type": "Output",
+            "ports": {
+              "inp1": "n_23bc0fb76272"
+            },
+            "parameters": {
+              "bitWidth": 1,
+              "constructorParameters": [
+                {
+                  "x": 100,
+                  "y": 40,
+                  "id": "yZnRFyaPBjWbXTUBQciH"
+                }
+              ],
+              "direction": "LEFT"
+            }
+          }
+        ],
+        "nets": [
+          {
+            "netId": "n_13235bf639df",
+            "bitWidth": 1,
+            "endpoints": [
+              {
+                "componentId": "c_1b160d0d98da",
+                "portName": "output1"
+              },
+              {
+                "componentId": "c_bffd9457cede",
+                "portName": "inp",
+                "portIndex": 0
+              },
+              {
+                "componentId": "c_ca1af9ae6663",
+                "portName": "inp",
+                "portIndex": 0
+              }
+            ]
+          },
+          {
+            "netId": "n_23bc0fb76272",
+            "bitWidth": 1,
+            "endpoints": [
+              {
+                "componentId": "c_747b85817669",
+                "portName": "inp1"
+              },
+              {
+                "componentId": "c_ca1af9ae6663",
+                "portName": "output1"
+              }
+            ]
+          },
+          {
+            "netId": "n_60119623a69e",
+            "bitWidth": 1,
+            "endpoints": [
+              {
+                "componentId": "c_33274127fccb",
+                "portName": "inp1"
+              },
+              {
+                "componentId": "c_bffd9457cede",
+                "portName": "output1"
+              }
+            ]
+          },
+          {
+            "netId": "n_7f3afb0c737a",
+            "bitWidth": 1,
+            "endpoints": [
+              {
+                "componentId": "c_bffd9457cede",
+                "portName": "inp",
+                "portIndex": 1
+              },
+              {
+                "componentId": "c_ca1af9ae6663",
+                "portName": "inp",
+                "portIndex": 1
+              },
+              {
+                "componentId": "c_fe72e8dd4b42",
+                "portName": "output1"
+              }
+            ]
+          }
+        ]
+      },
+      "visual": {
+        "componentPositions": {
+          "c_1b160d0d98da": {
+            "x": 470,
+            "y": 270,
+            "direction": "RIGHT",
+            "labelDirection": "LEFT"
+          },
+          "c_33274127fccb": {
+            "x": 680,
+            "y": 300,
+            "direction": "LEFT",
+            "labelDirection": "RIGHT"
+          },
+          "c_747b85817669": {
+            "x": 680,
+            "y": 410,
+            "direction": "LEFT",
+            "labelDirection": "RIGHT"
+          },
+          "c_bffd9457cede": {
+            "x": 580,
+            "y": 300,
+            "direction": "RIGHT",
+            "labelDirection": "LEFT"
+          },
+          "c_ca1af9ae6663": {
+            "x": 580,
+            "y": 410,
+            "direction": "RIGHT",
+            "labelDirection": "LEFT"
+          },
+          "c_fe72e8dd4b42": {
+            "x": 470,
+            "y": 330,
+            "direction": "RIGHT",
+            "labelDirection": "LEFT"
+          }
+        },
+        "layout": {
+          "width": 100,
+          "height": 60,
+          "title_x": 50,
+          "title_y": 13,
+          "titleEnabled": true
+        },
+        "netRoutes": {
+          "n_13235bf639df": {
+            "waypoints": [
+              {
+                "x": 570,
+                "y": 270
+              },
+              {
+                "x": 540,
+                "y": 400
+              },
+              {
+                "x": 540,
+                "y": 270
+              }
+            ]
+          },
+          "n_7f3afb0c737a": {
+            "waypoints": [
+              {
+                "x": 570,
+                "y": 330
+              },
+              {
+                "x": 510,
+                "y": 330
+              },
+              {
+                "x": 510,
+                "y": 420
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "orderedTabs": [
+    "26906968121"
+  ],
+  "globalState": {
+    "timePeriod": 500,
+    "clockEnabled": true,
+    "focussedCircuit": "26906968121"
+  }
+}

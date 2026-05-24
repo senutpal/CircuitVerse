@@ -6,9 +6,11 @@
 import { resetScopeList, scopeList, newCircuit } from '../circuit';
 import { showMessage, showError, generateId } from '../utils';
 import { checkIfBackup } from './backupCircuit';
-import { generateSaveData, getProjectName, setProjectName } from './save';
+import { generateSaveData, getProjectName, setProjectName, getTabsOrder } from './save';
 import load from './load';
 import ImportCircuitFiles from '../file/Open';
+import { serializeProject } from './serializer.js';
+import simulationArea from '../simulationArea';
 /**
  * Helper function to recover unsaved data
  * @category data
@@ -91,12 +93,27 @@ export function projectSavedSet(param) {
  * Helper function to store to localStorage -- needs to be deprecated/removed
  * @category data
  */
-export function saveOffline() {
+export async function saveOffline() {
     const data = generateSaveData();
     localStorage.setItem(projectId, data);
     const temp = JSON.parse(localStorage.getItem('projectList')) || {};
     temp[projectId] = getProjectName();
     localStorage.setItem('projectList', JSON.stringify(temp));
+
+    try {
+        const v2Data = await serializeProject(scopeList, {
+            projectName: getProjectName(),
+            projectId: projectId,
+            timePeriod: simulationArea.timePeriod,
+            clockEnabled: simulationArea.clockEnabled,
+            focussedCircuit: globalScope.id,
+            orderedTabs: getTabsOrder()
+        });
+        localStorage.setItem(`${projectId}_v2`, v2Data);
+    } catch (e) {
+        console.error('V2 serialization failed:', e);
+    }
+
     showMessage(`We have saved your project: ${getProjectName()} in your browser's localStorage`);
 }
 
